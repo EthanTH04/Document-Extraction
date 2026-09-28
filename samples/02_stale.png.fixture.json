@@ -1,0 +1,71 @@
+{
+  "_comment": "HAND-WRITTEN TEST FIXTURE, not a captured model response. See extract_offline().",
+  "meta": {},
+  "fields": {
+    "full_name": {
+      "value": "James T. Whitfield",
+      "confidence": 0.98,
+      "note": null
+    },
+    "date_of_birth": {
+      "value": "11/03/1974",
+      "confidence": 0.97,
+      "note": null
+    },
+    "phone": {
+      "value": "562-555-0199",
+      "confidence": 0.98,
+      "note": null
+    },
+    "email": {
+      "value": "jwhitfield74@yahoo.com",
+      "confidence": 0.95,
+      "note": null
+    },
+    "street_address": {
+      "value": "3321 Atlantic Ave",
+      "confidence": 0.97,
+      "note": null
+    },
+    "city": {
+      "value": "Long Beach",
+      "confidence": 0.99,
+      "note": null
+    },
+    "state": {
+      "value": "CA",
+      "confidence": 0.99,
+      "note": null
+    },
+    "zip_code": {
+      "value": "90807",
+      "confidence": 0.98,
+      "note": null
+    },
+    "case_type": {
+      "value": "Slip and fall",
+      "confidence": 0.96,
+      "note": null
+    },
+    "date_of_incident": {
+      "value": "06/10/2023",
+      "confidence": 0.96,
+      "note": null
+    },
+    "insurance_carrier": {
+      "value": "Allstate",
+      "confidence": 0.97,
+      "note": null
+    },
+    "policy_number": {
+      "value": "AL-7730-1156",
+      "confidence": 0.92,
+      "note": null
+    },
+    "referral_source": {
+      "value": "Former client",
+      "confidence": 0.94,
+      "note": null
+    }
+  }
+}

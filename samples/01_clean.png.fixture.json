@@ -1,0 +1,71 @@
+{
+  "_comment": "HAND-WRITTEN TEST FIXTURE, not a captured model response. See extract_offline().",
+  "meta": {},
+  "fields": {
+    "full_name": {
+      "value": "Maria L. Gutierrez",
+      "confidence": 0.99,
+      "note": null
+    },
+    "date_of_birth": {
+      "value": "04/22/1988",
+      "confidence": 0.98,
+      "note": null
+    },
+    "phone": {
+      "value": "(310) 555-0142",
+      "confidence": 0.98,
+      "note": null
+    },
+    "email": {
+      "value": "maria.gutierrez@gmail.com",
+      "confidence": 0.96,
+      "note": null
+    },
+    "street_address": {
+      "value": "1450 E Victoria St",
+      "confidence": 0.97,
+      "note": null
+    },
+    "city": {
+      "value": "Carson",
+      "confidence": 0.99,
+      "note": null
+    },
+    "state": {
+      "value": "CA",
+      "confidence": 0.99,
+      "note": null
+    },
+    "zip_code": {
+      "value": "90745",
+      "confidence": 0.98,
+      "note": null
+    },
+    "case_type": {
+      "value": "Auto accident",
+      "confidence": 0.97,
+      "note": null
+    },
+    "date_of_incident": {
+      "value": "03/15/2026",
+      "confidence": 0.97,
+      "note": null
+    },
+    "insurance_carrier": {
+      "value": "State Farm",
+      "confidence": 0.96,
+      "note": null
+    },
+    "policy_number": {
+      "value": "SF-2291-884-03",
+      "confidence": 0.93,
+      "note": null
+    },
+    "referral_source": {
+      "value": "Google search",
+      "confidence": 0.95,
+      "note": null
+    }
+  }
+}

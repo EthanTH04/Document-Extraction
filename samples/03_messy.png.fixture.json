@@ -1,0 +1,71 @@
+{
+  "_comment": "HAND-WRITTEN TEST FIXTURE, not a captured model response. See extract_offline().",
+  "meta": {},
+  "fields": {
+    "full_name": {
+      "value": "D. Okonkwo",
+      "confidence": 0.72,
+      "note": "First name given only as an initial"
+    },
+    "date_of_birth": {
+      "value": "07/09/2011",
+      "confidence": 0.88,
+      "note": null
+    },
+    "phone": {
+      "value": "555-0117",
+      "confidence": 0.9,
+      "note": "Area code appears to be missing"
+    },
+    "email": {
+      "value": "okonkwo.family@outlok.com",
+      "confidence": 0.86,
+      "note": null
+    },
+    "street_address": {
+      "value": "6620 E Pacific Coast Hwy",
+      "confidence": 0.89,
+      "note": null
+    },
+    "city": {
+      "value": "Long Beach",
+      "confidence": 0.93,
+      "note": null
+    },
+    "state": {
+      "value": "Calif",
+      "confidence": 0.91,
+      "note": null
+    },
+    "zip_code": {
+      "value": "90803",
+      "confidence": 0.9,
+      "note": null
+    },
+    "case_type": {
+      "value": "Dog bite",
+      "confidence": 0.92,
+      "note": null
+    },
+    "date_of_incident": {
+      "value": "01/22/2027",
+      "confidence": 0.87,
+      "note": null
+    },
+    "insurance_carrier": {
+      "value": null,
+      "confidence": 0.95,
+      "note": null
+    },
+    "policy_number": {
+      "value": null,
+      "confidence": 0.95,
+      "note": null
+    },
+    "referral_source": {
+      "value": "friend",
+      "confidence": 0.88,
+      "note": null
+    }
+  }
+}

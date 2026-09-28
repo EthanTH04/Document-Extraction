@@ -1,0 +1,47 @@
+{
+  "01_clean.png": {
+    "full_name": "Maria L. Gutierrez",
+    "date_of_birth": "04/22/1988",
+    "phone": "(310) 555-0142",
+    "email": "maria.gutierrez@gmail.com",
+    "street_address": "1450 E Victoria St",
+    "city": "Carson",
+    "state": "CA",
+    "zip_code": "90745",
+    "case_type": "Auto accident",
+    "date_of_incident": "03/15/2026",
+    "insurance_carrier": "State Farm",
+    "policy_number": "SF-2291-884-03",
+    "referral_source": "Google search"
+  },
+  "02_stale.png": {
+    "full_name": "James T. Whitfield",
+    "date_of_birth": "11/03/1974",
+    "phone": "562-555-0199",
+    "email": "jwhitfield74@yahoo.com",
+    "street_address": "3321 Atlantic Ave",
+    "city": "Long Beach",
+    "state": "CA",
+    "zip_code": "90807",
+    "case_type": "Slip and fall",
+    "date_of_incident": "06/10/2023",
+    "insurance_carrier": "Allstate",
+    "policy_number": "AL-7730-1156",
+    "referral_source": "Former client"
+  },
+  "03_messy.png": {
+    "full_name": "D. Okonkwo",
+    "date_of_birth": "07/09/2011",
+    "phone": "555-0117",
+    "email": "okonkwo.family@outlok.com",
+    "street_address": "6620 E Pacific Coast Hwy",
+    "city": "Long Beach",
+    "state": "Calif",
+    "zip_code": "90803",
+    "case_type": "Dog bite",
+    "date_of_incident": "01/22/2027",
+    "insurance_carrier": null,
+    "policy_number": null,
+    "referral_source": "friend"
+  }
+}

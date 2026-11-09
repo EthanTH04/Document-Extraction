@@ -1,0 +1,174 @@
+\documentclass[11pt,letterpaper]{report}
+
+% CSC / CTC 492 - Senior Design
+% Working research-paper skeleton. This draft contains planned sections,
+% not completed experiments or claimed results.
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[backend=biber,style=numeric-comp,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!45!black,
+    citecolor=blue!45!black,
+    urlcolor=blue!45!black,
+    pdftitle={Document Extractor: Senior Design Research Paper}
+}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  showstringspaces=false
+}
+
+\newcommand{\todowrite}[1]{\par\noindent\textit{Draft placeholder: #1}\par}
+
+\begin{document}
+\pagenumbering{gobble} % prevent duplicate PDF page anchors from title matter
+
+% Cover page - update the placeholders below before submitting.
+\begin{titlepage}
+\centering
+\vspace*{1.3in}
+{\Large California State University, Dominguez Hills\par}
+\vspace{0.3in}
+{\large CSC / CTC 492 -- Senior Design\par}
+\vspace{0.9in}
+{\Huge\bfseries Document Extractor\par}
+\vspace{0.25in}
+{\Large Structured Document Extraction, Validation, and Consistency Checking\par}
+\vspace{1.1in}
+{\large Student: [Your Name]\par}
+\vspace{0.15in}
+{\large Instructor: [Confirm Instructor Name]\par}
+\vfill
+{\large Fall 2026 --- Working Draft\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This project studies the extraction and validation of structured information from
+unstructured documents. An initial Python prototype processes a predefined set
+of fields from sample intake documents and applies field-validation rules.
+The planned extension adds work-order and invoice processing to investigate
+whether related documents can be compared to identify potentially missing or
+inconsistent entries. The system design and evaluation will emphasize traceable
+findings, human review, and measurable detection performance.
+\todowrite{Revise this abstract after experiments are complete. Include the final method, actual measured results, limitations, and contributions.}
+
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\section{Motivation}
+Organizations use documents such as intake forms, work orders, and invoices
+to record business information. Transcribing and checking these documents can
+require manual review. This project examines how structured extraction and
+validation can support a more consistent review process.
+\todowrite{Add a documented motivation with sources and define the actual target workflow.}
+
+\section{Research Question}
+\emph{How reliably can a document-processing system extract fields from
+work orders and invoices and flag possible inconsistencies between related
+records for human review?}
+\todowrite{Refine the research question before collecting experimental data.}
+
+\section{Scope and Planned Contributions}
+The current prototype centers on extracting fields and applying validation
+rules. Planned work extends it to additional document schemas and
+cross-document consistency checks. No performance advantage is claimed until
+it is measured.
+
+\chapter{Background and Related Work}
+\section{Document Information Extraction}
+\todowrite{Review relevant peer-reviewed work on document extraction, layout analysis, and structured field prediction. Cite sources actually read.}
+
+\section{Validation and Human Review}
+\todowrite{Review methods for field validation, uncertainty, human-in-the-loop correction, and traceability.}
+
+\section{Cross-Document Consistency Checking}
+\todowrite{Compare existing approaches for aligning records, entity matching, and discrepancy detection.}
+
+\chapter{Method}
+\section{System Overview}
+The existing prototype is implemented in Python. It defines expected fields,
+extracts structured values, and applies validation rules. The research
+extension will introduce representations for work orders and invoices and
+compare aligned records.
+\todowrite{Insert the actual architecture diagram and explain how data moves between components.}
+
+\section{Document Inputs and Data Schemas}
+\todowrite{Specify accepted input types, schema fields, normalization rules, and representative examples. Distinguish implemented from planned schemas.}
+
+\section{Extraction and Validation Pipeline}
+\todowrite{Describe the actual extraction steps, model/API configuration, validation rules, uncertainty handling, and error cases.}
+
+\section{Proposed Consistency-Check Module}
+The proposed first check compares documented materials or services against
+corresponding invoice entries. A missing or mismatched item is treated as a
+\emph{potential discrepancy}, not as confirmed unbilled work, until reviewed.
+\todowrite{Define record matching, tolerances, deterministic checks, ambiguous cases, and evidence references after implementation.}
+
+\section{Reproducibility and Implementation Environment}
+\todowrite{Record exact software versions, commands, datasets, experiment parameters, and how to reproduce every measurement.}
+
+\chapter{Results}
+\section{Evaluation Dataset}
+\todowrite{Describe the dataset, source/permission status, number of examples, ground-truth labels, and train/test separation (if applicable).}
+
+\section{Evaluation Metrics}
+Planned measurements include the number of true discrepancy findings,
+false-positive alerts, missed discrepancies, and processing time. The final
+metric definitions and evaluation protocol will be fixed before results are
+reported.
+\todowrite{Define precision, recall, false-positive rate, and timing procedure for the actual experiment.}
+
+\section{Experimental Findings}
+\todowrite{Insert only measured tables/figures with reproducible source data. No experiments have been reported in this starter draft.}
+
+\chapter{Discussion}
+\section{Interpretation}
+\todowrite{Explain what measured results mean after the experiments are complete.}
+
+\section{Limitations and Threats to Validity}
+\todowrite{Discuss input quality, synthetic-vs-real data, uncertain matches, potential false alerts, and generalization limits.}
+
+\chapter{Conclusion and Future Work}
+\todowrite{Summarize supported findings, not planned outcomes. Describe future document schemas, review workflows, and integrations separately from completed work.}
+
+% Add verified entries to references.bib and cite them with \cite{key}.
+% Remove the sentence below once bibliography entries have been added.
+\chapter*{References}
+\addcontentsline{toc}{chapter}{References}
+\noindent\textit{Bibliographic references will be added after sources are read and verified.}
+\printbibliography[heading=none]
+
+\chapter*{Glossary}
+\addcontentsline{toc}{chapter}{Glossary}
+\begin{description}
+  \item[Document extraction] Converting relevant information from a document into structured fields.
+  \item[Schema] A definition of expected fields and data types.
+  \item[Validation rule] A test that checks data against an explicitly defined constraint.
+  \item[Discrepancy] A possible inconsistency between related records requiring assessment.
+  \item[Human review] A person checks a flagged result before it is treated as confirmed.
+\end{description}
+
+\appendix
+\chapter{Supplementary Material}
+\todowrite{Add sample input descriptions, additional tables, reproducibility details, and experiment outputs as needed.}
+
+\end{document}

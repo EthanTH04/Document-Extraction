@@ -48,7 +48,7 @@
 \vspace{0.9in}
 {\Huge\bfseries Document Extractor\par}
 \vspace{0.25in}
-{\Large Structured Document Extraction, Validation, and Consistency Checking\par}
+{\Large Structured Document Extraction, Validation, and Human Review\par}
 \vspace{1.1in}
 {\large Student: [Your Name]\par}
 \vspace{0.15in}
@@ -63,10 +63,9 @@
 This project studies the extraction and validation of structured information from
 unstructured documents. An initial Python prototype processes a predefined set
 of fields from sample intake documents and applies field-validation rules.
-The planned extension adds work-order and invoice processing to investigate
-whether related documents can be compared to identify potentially missing or
-inconsistent entries. The system design and evaluation will emphasize traceable
-findings, human review, and measurable detection performance.
+The planned evaluation compares extracted fields against labeled synthetic
+intake forms and measures how reliably validation flags fields that need human
+review.
 \todowrite{Revise this abstract after experiments are complete. Include the final method, actual measured results, limitations, and contributions.}
 
 \tableofcontents
@@ -75,23 +74,21 @@ findings, human review, and measurable detection performance.
 
 \chapter{Introduction}
 \section{Motivation}
-Organizations use documents such as intake forms, work orders, and invoices
-to record business information. Transcribing and checking these documents can
-require manual review. This project examines how structured extraction and
-validation can support a more consistent review process.
+Intake forms can contain missing, ambiguous, or inconsistent information.
+Transcribing and checking these forms can require manual review. This project
+examines how structured extraction and validation can help reviewers identify
+fields that need attention.
 \todowrite{Add a documented motivation with sources and define the actual target workflow.}
 
 \section{Research Question}
-\emph{How reliably can a document-processing system extract fields from
-work orders and invoices and flag possible inconsistencies between related
-records for human review?}
+\emph{How reliably can a document-processing system extract structured fields
+from synthetic intake forms and flag fields that need human review?}
 \todowrite{Refine the research question before collecting experimental data.}
 
 \section{Scope and Planned Contributions}
-The current prototype centers on extracting fields and applying validation
-rules. Planned work extends it to additional document schemas and
-cross-document consistency checks. No performance advantage is claimed until
-it is measured.
+The current prototype extracts predefined fields from intake forms and applies
+validation rules. Planned work measures field-level extraction accuracy and
+the effectiveness of review flags on labeled synthetic forms.
 
 \chapter{Background and Related Work}
 \section{Document Information Extraction}
@@ -100,15 +97,11 @@ it is measured.
 \section{Validation and Human Review}
 \todowrite{Review methods for field validation, uncertainty, human-in-the-loop correction, and traceability.}
 
-\section{Cross-Document Consistency Checking}
-\todowrite{Compare existing approaches for aligning records, entity matching, and discrepancy detection.}
-
 \chapter{Method}
 \section{System Overview}
-The existing prototype is implemented in Python. It defines expected fields,
-extracts structured values, and applies validation rules. The research
-extension will introduce representations for work orders and invoices and
-compare aligned records.
+The Python prototype defines expected intake fields, extracts structured
+values, and applies validation rules. A command-line report shows normalized
+values and flags fields that need review.
 \todowrite{Insert the actual architecture diagram and explain how data moves between components.}
 
 \section{Document Inputs and Data Schemas}
@@ -117,11 +110,11 @@ compare aligned records.
 \section{Extraction and Validation Pipeline}
 \todowrite{Describe the actual extraction steps, model/API configuration, validation rules, uncertainty handling, and error cases.}
 
-\section{Proposed Consistency-Check Module}
-The proposed first check compares documented materials or services against
-corresponding invoice entries. A missing or mismatched item is treated as a
-\emph{potential discrepancy}, not as confirmed unbilled work, until reviewed.
-\todowrite{Define record matching, tolerances, deterministic checks, ambiguous cases, and evidence references after implementation.}
+\section{Field Validation and Review}
+The validator checks required fields, formats, dates, and selected relationships
+between fields within a form. Low model-reported confidence and extraction
+notes can also trigger review.
+\todowrite{Document the validation rules and the examples used to test review flags.}
 
 \section{Reproducibility and Implementation Environment}
 \todowrite{Record exact software versions, commands, datasets, experiment parameters, and how to reproduce every measurement.}
@@ -131,11 +124,11 @@ corresponding invoice entries. A missing or mismatched item is treated as a
 \todowrite{Describe the dataset, source/permission status, number of examples, ground-truth labels, and train/test separation (if applicable).}
 
 \section{Evaluation Metrics}
-Planned measurements include the number of true discrepancy findings,
-false-positive alerts, missed discrepancies, and processing time. The final
-metric definitions and evaluation protocol will be fixed before results are
-reported.
-\todowrite{Define precision, recall, false-positive rate, and timing procedure for the actual experiment.}
+Planned measurements include field-level extraction accuracy, correct and
+incorrect review flags, missed review cases, and processing time. The evaluation
+will report live extraction measurements and validation checks on hand-written
+fixtures separately.
+\todowrite{Define field-match criteria, review labels, and the timing procedure before running the experiment.}
 
 \section{Experimental Findings}
 \todowrite{Insert only measured tables/figures with reproducible source data. No experiments have been reported in this starter draft.}
@@ -145,7 +138,7 @@ reported.
 \todowrite{Explain what measured results mean after the experiments are complete.}
 
 \section{Limitations and Threats to Validity}
-\todowrite{Discuss input quality, synthetic-vs-real data, uncertain matches, potential false alerts, and generalization limits.}
+\todowrite{Discuss input quality, use of synthetic data, ambiguous fields, potential false alerts, and generalization limits.}
 
 \chapter{Conclusion and Future Work}
 \todowrite{Summarize supported findings, not planned outcomes. Describe future document schemas, review workflows, and integrations separately from completed work.}
@@ -163,7 +156,7 @@ reported.
   \item[Document extraction] Converting relevant information from a document into structured fields.
   \item[Schema] A definition of expected fields and data types.
   \item[Validation rule] A test that checks data against an explicitly defined constraint.
-  \item[Discrepancy] A possible inconsistency between related records requiring assessment.
+  \item[Review flag] An indication that an extracted field needs human assessment.
   \item[Human review] A person checks a flagged result before it is treated as confirmed.
 \end{description}
 

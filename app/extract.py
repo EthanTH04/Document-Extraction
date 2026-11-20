@@ -23,8 +23,10 @@ SYSTEM_PROMPT = """You read client intake forms for a personal injury law firm \
 and return the fields as JSON.
 
 Rules:
-- Return the value exactly as written on the form. Do not reformat dates, \
-phone numbers, or names.
+- Copy each value exactly as written, including spelling, punctuation, and \
+capitalization. Preserve apparent typos in email addresses and other fields.
+- Do not normalize dates, phone numbers, or names. For case type, transcribe \
+the label verbatim, even if it is unfamiliar. Do not substitute a category.
 - If a field is blank or absent, return null for its value.
 - confidence is your own honest read: 1.0 for clear printed text, lower for \
 unclear handwriting, smudged scans, or fields where two readings are possible.

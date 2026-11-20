@@ -97,7 +97,5 @@ def prompt_field_list() -> str:
             bits.append("(a date; return it exactly as written)")
         elif f.kind == "phone":
             bits.append("(a phone number)")
-        elif f.kind == "choice":
-            bits.append(f"(one of: {', '.join(f.choices)})")
         lines.append(" ".join(bits))
     return "\n".join(lines)

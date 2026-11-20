@@ -87,6 +87,14 @@ Live extraction requires API access and may incur usage charges.
 python -m pytest -q
 ```
 
+### Compare extraction with the sample labels
+
+```bash
+python benchmark.py
+```
+
+This compares hand-written fixtures with the labeled synthetic intake forms and reports exact field matches, mismatches, and review flags. Use `python benchmark.py --live` with `ANTHROPIC_API_KEY` to measure live Claude extraction. Live runs may incur charges. The report shows how many fields were evaluated, and the command exits with an error status if any document failed to extract.
+
 ## Project Structure
 
 ```text
